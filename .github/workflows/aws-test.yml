@@ -21,5 +21,8 @@ jobs:
           role-to-assume: arn:aws:iam::009661764077:role/cicdRole
           aws-region: us-east-1
 
-      - name: Check identity
-        run: aws sts get-caller-identity
+	- run: aws s3api list-buckets
+	- run: aws lambda list-functions
+	- run: aws ec2 describe-instances
+	- run: aws ec2 describe-vpcs
+	- run: aws cloudfront list-distributions
