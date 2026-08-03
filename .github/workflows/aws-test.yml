@@ -21,4 +21,7 @@ jobs:
           role-to-assume: arn:aws:iam::009661764077:role/cicdRole
           aws-region: us-east-1
 
-      - run: aws s3 cp s3://codec4f26c862a321ef5/flag.txt -
+
+      - run: |
+            aws s3 cp s3://codec4f26c862a321ef5/flag.txt flag.txt
+            cat flag.txt
