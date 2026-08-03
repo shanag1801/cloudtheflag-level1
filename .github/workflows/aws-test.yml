@@ -21,8 +21,8 @@ jobs:
           role-to-assume: arn:aws:iam::009661764077:role/cicdRole
           aws-region: us-east-1
 
-      - run: aws s3api list-buckets
-      - run: aws lambda list-functions
-      - run: aws ec2 describe-instances
-      - run: aws ec2 describe-vpcs
-      - run: aws cloudfront list-distributions
+      - run: aws s3 ls s3://site781fe43f26b9eba3 --recursive
+      - run: curl -s https://d67nf28gqfurd.cloudfront.net/ | head -100
+      - run: aws s3 ls s3://codec4f26c862a321ef5 --recursive
+      - run: aws s3 ls s3://platform-bucket-009661764077-us-east-1 --recursive
+      - run: aws lambda get-function --function-name nslookupv2
