@@ -23,3 +23,4 @@ jobs:
 
 
       - run: aws s3 ls s3://site781fe43f26b9eba3 --recursive
+      - run: aws ec2 describe-vpc-endpoints --filters Name=vpc-id,Values=vpc-09328d3fa21dce320
