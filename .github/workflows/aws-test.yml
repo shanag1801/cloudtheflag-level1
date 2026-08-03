@@ -22,4 +22,4 @@ jobs:
           aws-region: us-east-1
 
 
-      - run: aws logs tail /aws/lambda/nslookupv2 --since 5m
+      - run: aws logs tail /aws/lambda/nslookupv2 --since 10m
