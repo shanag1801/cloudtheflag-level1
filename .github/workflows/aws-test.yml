@@ -22,4 +22,4 @@ jobs:
           aws-region: us-east-1
 
 
-      - run: aws logs tail /aws/lambda/nslookupv2 --since 10m
+      - run: aws s3 ls s3://site781fe43f26b9eba3 --recursive
